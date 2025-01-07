@@ -118,7 +118,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onChange }) => {
     
     const filePath = `public/${fileName}`;
         const { error: uploadError } = await supabase.storage
-            .from('files')
+            .from('filecatcher')
             .upload(filePath, uploadFile, {
                 cacheControl: '3600',
                 upsert: false,
@@ -130,7 +130,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ onChange }) => {
         }
 
         const { data: { publicUrl } } = supabase.storage
-            .from('files')
+            .from('filecatcher')
             .getPublicUrl(filePath);
 
         const shortURL = await GenerateShortUrl(publicUrl);
