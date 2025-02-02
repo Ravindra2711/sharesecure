@@ -73,7 +73,7 @@ export default function FlashShare() {
 
       const fileName = `note-${Date.now()}.md`;
       const { data, error: uploadError } = await supabase.storage
-        .from('files')
+        .from('filecatcher')
         .upload(fileName, new Blob([noteContent], { type: 'text/markdown' }));
 
       if (uploadError) {
@@ -81,7 +81,7 @@ export default function FlashShare() {
         throw new Error('Failed to upload note.');
       }
 
-      const { data: publicUrlData } = await supabase.storage.from('files').getPublicUrl(data.path);
+      const { data: publicUrlData } = await supabase.storage.from('filecatcher').getPublicUrl(data.path);
 
       const publicUrl = publicUrlData.publicUrl;
       setDataUrl(publicUrl);

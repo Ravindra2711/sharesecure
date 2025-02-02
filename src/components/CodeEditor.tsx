@@ -109,7 +109,7 @@ export default function CodeEditorNoteSharing() {
 
       const fileName = `code-${Date.now()}.txt`;
       const { data, error: uploadError } = await supabase.storage
-        .from('files')
+        .from('filecatcher')
         .upload(fileName, new Blob([code], { type: 'text/plain' }));
 
       if (uploadError) {
@@ -117,7 +117,7 @@ export default function CodeEditorNoteSharing() {
         throw new Error('Failed to upload code.');
       }
 
-      const { data: publicUrlData } = await supabase.storage.from('files').getPublicUrl(data.path);
+      const { data: publicUrlData } = await supabase.storage.from('filecatcher').getPublicUrl(data.path);
 
       const publicUrl = publicUrlData.publicUrl;
       setDataUrl(publicUrl);

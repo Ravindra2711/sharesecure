@@ -114,11 +114,11 @@ export const metadata: Metadata = {
 ],
   authors: [
     {
-      name: "Rohit Kumar",
-      url: "https://rohitk.me/",
+      name: "Ravindra Kumawat",
+      url: "https://ravi",
     }
   ],
-  creator: "Rohit Kumar",
+  creator: "Ravindra Kumawat",
   publisher: "FlashShare",
   robots: {
     index: true,
