@@ -74,7 +74,7 @@ export default function Home() {
       <div
   className="sm:fixed sm:bottom-4 sm:right-4 relative mt-8 sm:mt-0 mb-4"
 >
-  <Link href="https://github.com/Ravindra2711">
+  <Link href="https://github.com/Anmol-zone">
     <AnimatedShinyTextDemo />
   </Link>
 </div>
